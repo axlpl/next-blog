@@ -99,6 +99,7 @@ export default function HomePage({ initialPosts, initialTotal, categories }) {
           {posts.map((post) => (
             <Link key={post.id} href={`/blog/${post.slug}`}>
               <PostItem
+                isAnimated
                 key={post.id}
                 post={post}
                 categoryNames={getCategoryNames(post.categories).join(', ')}

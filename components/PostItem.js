@@ -1,8 +1,14 @@
 import Image from 'next/image'
 
-export default function PostItem({ post, categoryNames }) {
+export default function PostItem({ post, categoryNames, isAnimated = false }) {
   return (
-    <div className="shadow-lg rounded-xl bg-white">
+    <div
+      className={`shadow-lg rounded-xl bg-white ${
+        isAnimated
+          ? 'hover:scale-105 hover:rotate-3 hover:scale-105 transition-all duration-300 ease-in-out'
+          : ''
+      }`}
+    >
       <div className="relative h-40 w-full">
         <Image
           src={post.imageUrl}
